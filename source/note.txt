@@ -1,0 +1,15 @@
+{{% notice note %}}
+Đây là Note
+{{% /notice %}}
+	
+{{% notice info %}}
+Đây là Info
+{{% /notice %}}
+	
+{{% notice tip %}}
+Đây là Tip
+{{% /notice %}}
+	
+{{% notice warning %}}
+Đây là Warning
+{{% /notice %}}

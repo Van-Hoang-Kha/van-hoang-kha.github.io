@@ -1,0 +1,99 @@
+[
+{
+	"uri": "/vi/3-content/3.1-structures/",
+	"title": "Cấu trúc file",
+	"tags": [],
+	"description": "",
+	"content": "Cấu trúc file Thư mục content   Chúng ta tạm quy ước với nhau là sẽ tổ chức bài Lab với 2 cấp độ là tối đa (VD: 2. -\u0026gt; 2.1. tương ứng với 2.write-content -\u0026gt; 2.1-Directory structure)\n  Trong mỗi thư mục sẽ bao gồm:\n   Các thư mục thứ cấp. Tập tin _index.md : Chứa nội dung tiếng Anh. Tập tin _index.vi.md : Chứa nội dung tiếng Việt.  Nếu chỉ đang viết guide tiếng Việt thôi thì sẽ copy _index.vi.md ra một bản nữa và đổi tên thành _index.md nhá. (Để dịch sau)  Thư mục static/images   Đây sẽ là thư mục chứa ảnh cho Lab Guide. Mọi ảnh đều được bỏ vào trong đây. Có thể phân cấp thư mục cho các ảnh để dễ quản lý ảnh.\n  Các ảnh này sẽ được sử dụng trong bài viết bằng thẻ gán ảnh:\n  ![Đây là tên ảnh (Hiển thị khi không load được ảnh)](/images/2.1/SNAG001.png?width=90pc)  Sử dụng ?width=90pc với các ảnh toàn màn hình và ?width=40pc hoặc ?width=50pc đối với các ảnh crop.  Thư mục public   Đây là thư mục sẽ được tạo ra bởi hugo.\n  Sau khi viết hoàn chỉnh guide hoặc một phần guide mà muốn kiểm tra hiển thị thì có thể chạy lệnh sau để build project\n  $ hugo Sau khi build hoàn thành thì sẽ có thư mục public xuất hiện. Tiến hành chạy server để xem thành quả tại http://localhost:1313  $ hugo server Tới đây rồi thì hãy thử xóa thư mục public và chạy thử xem Guide này có hoạt động được không nhá.\n"
+},
+{
+	"uri": "/vi/",
+	"title": "First Cloud Journey",
+	"tags": [],
+	"description": "",
+	"content": "First Cloud Journey Tổng quan Trong bài này, hướng dẫn cách viết Lab Guide và tạo Workshop\n First Cloud Journey    Tải và sử dụng theme Hugo Sử dụng Visual Studio Code Sử dụng Snagit Sử dụng Draw.io  Nội dung  Giới thiệu Các bước chuẩn bị Nội dung Hoàn thành Workshop  "
+},
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Trong bài này, hướng dẫn cách viết Lab Guide và tạo Workshop\n First Cloud Journey    Tải các công cụ, phần mềm hỗ trợ Cách triển khai cấu trúc file Cách viết nội dung Các bước tiến hành hoàn thành Workshop  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.1-downloadhugotheme/",
+	"title": "Tải Hugo Theme",
+	"tags": [],
+	"description": "",
+	"content": "Tải Hugo Theme  Lab guide sử dụng Theme Hugo. Truy cập vào vào trang chủ Hugo Theme để xem thông tin tổng quan  Vào trang Install Hugo để tải Hugo Theme tùy thuộc vào hệ điều hành  Sau khi tải Hugo Theme thành công   Các bạn sẽ tải Workshop mẫu về máy tại Workshop Sau khi tải Workshop.zip về máy, giải nén Mở thư mục Workshop  Mở workshop bằng IDE( Visual Studio Code )   Thực hiện lệnh để kiểm tra đã tải Hugo thành công  hugo version\r Thực hiện chạy workshop bằng lệnh  hugo server\rMở trình duyệt và nhập localhost:1313  Thực hiện chỉnh sửa   Trong folder content, chỉnh sửa nội dung phù hợp với nội dung workshop của bạn Trong folder static/iamges, chỉnh sửa và lưu trữ hình ảnh workshop của bạn  "
+},
+{
+	"uri": "/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Các bước chuẩn bị  Tải Hugo Theme Tải IDE Tải Snagit Tải Active Presenter Tải Draw.io  "
+},
+{
+	"uri": "/vi/3-content/3.2-content/",
+	"title": "Nội dung",
+	"tags": [],
+	"description": "",
+	"content": "Nội dung Phần tiêu đề Ở đầu mỗi trang đều có phần header này để hiển thị tiêu đề và xác định điều hướng ở bên Navigation panel bên trái trang.\n title = \u0026quot;Viết nội dung\u0026quot;: Để nội dung ngắn gọn súc tích để vừa 1 dòng ở bên Navigation panel bên trái. chapter = false : Để mặc định là false. Title ở trên cũng sẽ hiển thị là h1 ở trong bài viết. weiht: Dùng để sắp xếp index của tiêu đề pre = \u0026quot;\u0026lt;b\u0026gt;2. \u0026lt;/b\u0026gt;\u0026quot; : Đây là đánh số cho trang hiển thị ở Navigation panel bên trái.  ---\rtitle : \u0026quot;Viết nội dung\u0026quot;\rdate : \u0026quot;`r Sys.Date()`\u0026quot; weight : 2\rchapter : false\rpre : \u0026quot; \u0026lt;b\u0026gt; 2. \u0026lt;/b\u0026gt; \u0026quot;\r---\rPhần heading  Chúng ta sẽ thống nhất việc dùng tiêu đề cho các section trong 1 trang sẽ sử dụng h4 (####).  Phần Table of Contents (TOC)   Sau khi viết xong nội dung (hoặc liệt kê xong các Heading của 1 trang), chúng ta có thể xây dựng Table of Contents (TOC) tự động bằng plug-in.\n  Sử dụng tổ hợp phím Ctrl + Shift + P sau đó gõ vào Create Table of Contents rồi chọn lựa chọn của plug-in Markdown All in One. Enter.\n  Chúng ta sẽ có một cái TOC như sau:\nNội dung: - [**Cách viết một Lab Guide**](#cách-viết-một-lab-guide) - [**I. Phần 1: Chuẩn bị**](#i-phần-1-chuẩn-bị) - [II. **Phần 2: Nội dung**](#ii-phần-2-nội-dung) - [1. Cấu trúc file](#1-cấu-trúc-file) - [**Thư mục *content***](#thư-mục-content) - [**Thư mục *static/images***](#thư-mục-staticimages) - [**Thư mục *public***](#thư-mục-public) - [2. Nội dung](#2-nội-dung) - [**Phần tiêu đề**](#phần-tiêu-đề) - [**Phần heading**](#phần-heading) - [**Phần Table of Contents (TOC)**](#phần-table-of-contents-toc) - [**Phần ghi chú**](#phần-ghi-chú) - [**Phần tập tin đính kèm**](#phần-tập-tin-đính-kèm) - [**Phần vẽ bảng**](#phần-vẽ-bảng) - [**Phần hình ảnh**](#phần-hình-ảnh) - [**Update config.toml**](#update-configtoml) Chèn icon trong các phần giới thiệu  Ta sử dụng bộ icon tải về từ AWS tại đây Thực hiện lệnh chèn như sau:  {\u0026lt; figure src=\u0026quot;../images/fcj.png\u0026quot; title=\u0026quot;First Cloud Journey\u0026quot; width=150pc \u0026gt;}\rPhần ghi chú   Trong bài viết có thể sẽ có các đoạn cần làm nổi bật lên như Ghi chú, Cảnh báo,\u0026hellip; thì sẽ dùng shortcode theo hướng dẫn tại đây\n  Ghi chú Note. Xem thêm tại Note\n  Đây là Note\n\rGhi chú Info  Đây là Info\n\rGhi chú Tip  Đây là Tip\n\rGhi chú Warning  Đây là Warning\n\rPhần tập tin đính kèm   Phần này sẽ thực hiện theo hướng dẫn tại đây\n  Vị trí đặt tập tin sẽ là trong thư mục tương ứng với tên trang md. như sau:\n   _index.md \u0026mdash;\u0026gt; _index.files _index.vi.md \u0026mdash;\u0026gt; _index.vi.files  Nghĩa là nếu có nhiều ngôn ngữ thì mỗi ngôn ngữ 1 thư mục như vậy cho 1 trang.\n\rSử dụng shortcode sau để tạo phần đính kèm:    title : Tiêu đề phần đính kèm\n  pattern : Xác định các tập tin được hiện ra trong box (có thể để tên tập tin hoặc pattern để xác định theo đuôi)\n  Ví dụ lọc tập tin Dockerfile:\n  {{%\u0026lt;attachments title=\u0026quot;Dockerfile\u0026quot; pattern=\u0026quot;Dockerfile\u0026quot;/%}}\r Ví dụ lọc tập tin theo đuôi:  {{%attachments title=\u0026quot;Build Scripts\u0026quot; pattern=\u0026quot;.*(ps1|sh)\u0026quot;/%}}\rPhần vẽ bảng Để đơn giản hóa việc vẽ bảng, người viết thường sử dụng công cụ Tables Generator\n Truy cập tới trang. Nhập nội dung xong bấm Generate rồi Copy to clipboard. Xong vô đây Paste vào thôi.  Phần hình ảnh   Phần mềm chụp màn hình khuyên dùng: SnagIt (2019/2020)\n  Thiết kế hình ảnh:\n  Để tạo sự đồng nhất và dễ hiểu cho người xem, chúng ta định hình ra một chuẩn chung như sau:\n Về Screenshot Console: Trình duyệt: Chrome tắt Bookmark bar (khuyên dùng) Zoom: Mặc định không zoom in (100%) Độ phân giải màn hình: FullHD (1920 x 1080) Định dạng: PNG (Khuyên dùng) Về Font chữ ghi trên hình: Font: Arial Black Size: 18 Không bật Shadow. Về Khung đánh dấu khu vực cần chú ý:  Màu: Trùng với màu chữ ghi chú Độ dày (Thickness): 1 px Độ mờ (Opacity): 100%    Update config.toml [Languages.en]\rtitle = \u0026quot;How to Write a Lab Guide\u0026quot;\rweight = 1\rlanguageName = \u0026quot;English\u0026quot;\r[Languages.vi]\rtitle = \u0026quot;Cách viết một Lab Guide\u0026quot;\rweight = 2\rlanguageName = \u0026quot;Tiếng Việt\u0026quot;\r"
+},
+{
+	"uri": "/vi/2-prerequiste/2.2-visualstudiocode/",
+	"title": "Tải Visual Studio Code",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan  Bạn một IDE nào đó có các plug-ins hỗ trợ các loại ngôn ngữ cho thuận tiện trong việc viết: Visual Studio Code, Atom, Notepad++,\u0026hellip; (Người viết guide này đang xài Visual Studio Code). Các plug-ins theo IDE: Nghiễm nhiên sẽ cần plug-ins dành cho Markdown (như Markdown All in One, Markdown TOC,\u0026hellip;). Mỗi khi viết 1 file ngôn ngữ gì thì VS Code cũng gợi ý cài cái plug-ins liên quan nên không phải lo lắng  Nội dung  Truy cập vào Visual Studio Code để tải IDE  Các bạn truy cập vào trang Document để xem thông tin chi tiết và sử dụng các plugin  "
+},
+{
+	"uri": "/vi/3-content/",
+	"title": "Nội dung",
+	"tags": [],
+	"description": "",
+	"content": "Nội dung  Cấu trúc file Nội dung  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.3-snagit/",
+	"title": "Tải Snagit",
+	"tags": [],
+	"description": "",
+	"content": "Tải Snagit  Các bạn có thể tải Snagit từ Snagit. Hoặc các bạn có thể tham khảo từ các trang khác.  Một số tính năng của Snagit  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.4-activepresenter/",
+	"title": "Tải Active Presenter",
+	"tags": [],
+	"description": "",
+	"content": " Các bạn truy cập vào trang Active Presenter để tải về máy  Sau khi cài đặt Active Presenter  "
+},
+{
+	"uri": "/vi/4-workshop/",
+	"title": "Workshop",
+	"tags": [],
+	"description": "",
+	"content": "Workshop Sau khi hoàn thành các bước, chúng ta tiến hành thực hiện Workshop\n Thực hiện bài Hand-on Lab một lần để nắm các bước cần phải làm. (Ghi chú lại những bước lỗi do thiếu (có thể là IAM Role, Permissions,\u0026hellip;)) Lên cấu trúc cho Lab Guide (phân theo từng bước). Đây (có thể) cũng chính là cấu trúc thư mục của bài thực hành. Clean up và thực hiện lại bài Lab lần thứ 2. Lần này quay phim lại (có thể sử dụng Active Presenter) hoặc screenshot từng bước và đánh số thứ tự hình ảnh (có thể dùng SnagIt) Viết phần nội dung text cho Lab Guide. (Để sẵn các placeholder cho hình ảnh) Nếu quay phim thì trích xuất hình ảnh từ video ra (có thể sử dụng VLC Player có mục Screenshot) và đặt hình ảnh vào những vị trí đã xác định. Crop hình ảnh loại bỏ đi khung viền của browser (Nếu sử dụng SnagIt thì xác định vùng chụp cố định bỏ đi khung viền browser) Kiểm tra và format lại nội dung với các Notice, bổ sung các Tập tin đính kèm (nếu có)  "
+},
+{
+	"uri": "/vi/2-prerequiste/2.5-drawio/",
+	"title": "Tải Draw.io",
+	"tags": [],
+	"description": "",
+	"content": " Các bạn có thể tải Draw.io tại Draw.io  Các bạn có thể sử dụng Draw.io trên web tại Draw.io  Tải bộ icon mởi nhất của AWS tại đây   Vẽ diagrams theo đúng format và style. Tham khảo tại đây\n  Một vài kiến trúc mẫu\n   Kiến trúc mẫu 1:   Kiến trúc mẫu 2:   Kiến trúc mẫu 3:  "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

@@ -1,0 +1,99 @@
+[
+{
+	"uri": "/2-prerequiste/2.1-downloadhugotheme/",
+	"title": "Download Hugo Theme",
+	"tags": [],
+	"description": "",
+	"content": "Download Hugo Theme  Lab guide using Hugo Theme. Visit the homepage Hugo Theme to view overview information  Go to Install Hugo page to download Hugo Theme depending on operating system  After downloading Hugo Theme successfully   You will download Workshop sample to your computer at [Workshop](https://github.com/Van-Hoang-Kha/van-hoang-kha.github.io/blob/master/source/000000- Workshop.zip) After downloading Workshop.zip to your computer, extract it Open folder Workshop  Open workshop with IDE (Visual Studio Code)   Execute the command to check that Hugo has been downloaded successfully  hugo version\r Run the workshop by command  hugo server\rOpen a browser and type localhost:1313  Make edits   In the content folder, edit the content to match the content of your workshop In static/iamges folder, edit and store your workshop images  "
+},
+{
+	"uri": "/3-content/3.1-structures/",
+	"title": "File structure",
+	"tags": [],
+	"description": "",
+	"content": "File structure Folder content   We make a temporary convention together that we will organize the Lab with 2 maximum levels (eg 2. -\u0026gt; 2.1. corresponding to 2.write-content -\u0026gt; 2.1-Directory structure)\n  In each folder will include:\n   Secondary folders. File _index.md : Contains English content. File _index.vi.md : Contains Vietnamese content.  If you\u0026rsquo;re just writing a Vietnamese guide, you\u0026rsquo;ll copy _index.vi.md to another copy and rename it to _index.md. (For later translation)  Directory static/images   This will be the folder containing the images for the Lab Guide. All pictures are included here. Folders for images can be hierarchical for easy image management.\n  These images will be used in the article with the image tag:\n  ![This is the image name (Displayed when the image cannot be loaded)](/images/2.1/SNAG001.png?width=90pc)  Use ?width=90pc for full screen images and ?width=40pc or ?width=50pc for crop images.  Folder public   This is the directory that will be created by hugo.\n  After writing the complete guide or part of the guide and want to check the display, you can run the following command to build the project\n  $ hugo After the build is completed, a public folder will appear. Run the server to see the results at http://localhost:1313  $ hugo server Here, try to delete the public folder and run the test to see if this Guide works.\n"
+},
+{
+	"uri": "/",
+	"title": "First Cloud Journey",
+	"tags": [],
+	"description": "",
+	"content": "First Cloud Journey Overview In this tutorial, I will show you how to write Lab Guide and create Workshop\n First Cloud Journey    Download and use Hugo theme Using Visual Studio Code Use Snagit Use Draw.io  Content  Introduction Preparation steps Content Complete Workshop  "
+},
+{
+	"uri": "/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "In this tutorial, I will show you how to write Lab Guide and create Workshop\n First Cloud Journey    Download support tools and software How to implement file structure How to write content Steps to complete Workshop  "
+},
+{
+	"uri": "/3-content/3.2-content/",
+	"title": "Content",
+	"tags": [],
+	"description": "",
+	"content": "Content Title There is this header at the top of every page to display the title and define the navigation on the Navigation panel on the left side of the page.\n   chapter = false : Leave the default as false. The title above will also display as h1 in the article. weiht: Used to sort the index of the title pre = \u0026quot;\u0026lt;b\u0026gt;2. \u0026lt;/b\u0026gt;\u0026quot; : This is the numbering for the page displayed in Navigation panel on the left.  ---\rtitle : \u0026quot;Writing Content\u0026quot;\rdate : \u0026quot;`r Sys.Date()`\u0026quot;\rweight : 2\rchapter : false\rpre : \u0026quot; \u0026lt;b\u0026gt; 2. \u0026lt;/b\u0026gt; \u0026quot;\r---\rHeading Section  We will agree to use the title for the sections in a page will use h4 (####).  Table of Contents (TOC)   After writing the content (or finishing listing the Headings of a page), we can build Table of Contents (TOC) automatically by plug-in.\n  Use the key combination Ctrl + Shift + P then type in Create Table of Contents and select the plug-in option Markdown All in One. Enter.\n  We will have a TOC like this:\nContent:\n- [**Cách viết một Lab Guide**](#cách-viết-một-lab-guide)\r- [**I. Phần 1: Chuẩn bị**](#i-phần-1-chuẩn-bị)\r- [II. **Phần 2: Nội dung**](#ii-phần-2-nội-dung)\r- [1. Cấu trúc file](#1-cấu-trúc-file)\r- [**Thư mục *content***](#thư-mục-content)\r- [**Thư mục *static/images***](#thư-mục-staticimages)\r- [**Thư mục *public***](#thư-mục-public)\r- [2. Nội dung](#2-nội-dung)\r- [**Phần tiêu đề**](#phần-tiêu-đề)\r- [**Phần heading**](#phần-heading)\r- [**Phần Table of Contents (TOC)**](#phần-table-of-contents-toc)\r- [**Phần ghi chú**](#phần-ghi-chú)\r- [**Phần tập tin đính kèm**](#phần-tập-tin-đính-kèm)\r- [**Phần vẽ bảng**](#phần-vẽ-bảng)\r- [**Phần hình ảnh**](#phần-hình-ảnh)\r- [**Update config.toml**](#update-configtoml)\rInsert icons in the intro  We use the icon set downloaded from AWS here Execute the insert command as follows:  {\u0026lt; figure src=\u0026quot;../images/fcj.png\u0026quot; title=\u0026quot;First Cloud Journey\u0026quot; width=150pc \u0026gt;}\rNotes   In the article, there may be paragraphs that need to be highlighted such as Notes, Warnings,\u0026hellip; then the shortcode will be used according to the instructions at [here](https://learn.netlify.app/en/ shortcodes/notice/)\n  Note Note\n  This is Note\n\rNotes Info  This is Info\n\rNote Tip  This is Tip\n\rNotes Warning  This is Warning\n\rAttachment file   This section will follow the instructions at here\n  The file location will be in the directory corresponding to the md. page name as follows:\n   _index.md \u0026mdash;\u0026gt; _index.files _index.vi.md \u0026mdash;\u0026gt; _index.vi.files  That is, if there are many languages, each language has 1 such directory for 1 page.\n\rUse the following shortcode to create an attachment:    title : Title of attachment\n  pattern : Identify the files displayed in the box (you can leave the filename or pattern to identify the tail)\n  Example filter file Dockerfile:\n  {{%\u0026lt;attachments title=\u0026quot;Dockerfile\u0026quot; pattern=\u0026quot;Dockerfile\u0026quot;/%}}\r Example file filtering by extension:  {{%attachments title=\u0026quot;Build Scripts\u0026quot; pattern=\u0026quot;.*(ps1|sh)\u0026quot;/%}}\rTable drawing To simplify drawing tables, writers often use the tool Tables Generator\n Go to the page. After entering the content, click Generate and then Copy to clipboard. Done here Paste in.  Image Section   Recommended screen capture software: SnagIt (2019/2020)\n  Image design:\n  To create uniformity and easy understanding for viewers, we define a common standard as follows:\n About Screenshot Console: Browser: Chrome disable Bookmark bar (recommended) Zoom: Default does not zoom in (100%) Screen Resolution: FullHD (1920 x 1080) Format: PNG (Recommended) About the font inscribed on the picture: Font: Arial Black Size: 18 No enable Shadow. Regarding the area marking frame to pay attention:  Color: Matches the note text color Thickness: 1 px Opacity: 100%    Update config.toml [Languages.en]\rtitle = \u0026quot;How to Write a Lab Guide\u0026quot;\rweight = 1\rlanguageName = \u0026quot;English\u0026quot;\r[Languages.vi]\rtitle = \u0026quot;Cách viết một Lab Guide\u0026quot;\rweight = 2\rlanguageName = \u0026quot;Tiếng Việt\u0026quot;\r"
+},
+{
+	"uri": "/2-prerequiste/2.2-visualstudiocode/",
+	"title": "Get Visual Studio Code",
+	"tags": [],
+	"description": "",
+	"content": "Overview  Do you have an IDE that has plug-ins that support different languages ​​for your convenience in writing: Visual Studio Code, Atom, Notepad++,\u0026hellip; (The writer of this guide is using Visual Studio Code). Plug-ins by IDE: Of course, plug-ins will be needed for Markdown (like Markdown All in One, Markdown TOC,\u0026hellip;). Every time I write a file in any language, VS Code also suggests to install the related plug-ins, so I don\u0026rsquo;t have to worry  Content  Go to Visual Studio Code to download the IDE  You visit the page Document to view detailed information and use the plugin  "
+},
+{
+	"uri": "/2-prerequiste/",
+	"title": "Preparation ",
+	"tags": [],
+	"description": "",
+	"content": "Preparation steps  Download Hugo Theme Download IDE Download Snagit Download Active Presenter Download Draw.io  "
+},
+{
+	"uri": "/3-content/",
+	"title": "Content",
+	"tags": [],
+	"description": "",
+	"content": "Content  File Structure Content  "
+},
+{
+	"uri": "/2-prerequiste/2.3-snagit/",
+	"title": "Download Snagit",
+	"tags": [],
+	"description": "",
+	"content": "Download Snagit  You can download Snagit from Snagit. Or you can refer to other sites.  Some features of Snagit  "
+},
+{
+	"uri": "/2-prerequiste/2.4-activepresenter/",
+	"title": "Download Active Presenter",
+	"tags": [],
+	"description": "",
+	"content": " You access the page Active Presenter to download to your device.  After installing Active Presenter  "
+},
+{
+	"uri": "/4-workshop/",
+	"title": "Workshop",
+	"tags": [],
+	"description": "",
+	"content": "Workshop After completing the steps, we proceed to execute Workshop\n Do the Hand-on Lab once to understand the steps needed. (Note down error steps due to missing (could be IAM Role, Permissions,\u0026hellip;) ) Structure for Lab Guide (step by step). This is (probably) also the directory structure of the exercise. Clean up and redo the Lab for the second time. This time record a video (can use Active Presenter) or screenshot each step and number the images in sequence. (can use SnagIt) Write text for Lab Guide. (Leave placeholders for images available) If filming, extract the image from the video (can use VLC Player with Screenshot) and place the image in the specified locations. Crop image remove from browser border (If using SnagIt, define fixed capture area remove browser border) Check and format the content with the Notice, add the Attachment (if available)  "
+},
+{
+	"uri": "/2-prerequiste/2.5-drawio/",
+	"title": "Download Draw.io",
+	"tags": [],
+	"description": "",
+	"content": " You can download Draw.io at Draw.io  You can use Draw.io on the web at Draw.io  Download the latest AWS icon set here   Draw diagrams in the correct format and style. Refer here\n  Some sample architectures\n   Sample architecture 1:   Architecture sample 2:   Model 3 architecture:  "
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
